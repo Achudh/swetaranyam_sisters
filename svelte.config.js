@@ -7,7 +7,7 @@ const config = {
 	kit: {
 		adapter: adapter({
 			// Vercel configuration
-			runtime: 'nodejs18.x',
+			runtime: 'nodejs20.x',
 			regions: ['iad1'], // US East region
 			split: true, // Enable function splitting for better performance
 			external: [],
