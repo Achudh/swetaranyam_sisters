@@ -14,8 +14,8 @@
     "format": "prettier --plugin-search-dir . --write ."
   },
   "devDependencies": {
-    "@sveltejs/adapter-vercel": "^3.0.1",
-    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/adapter-vercel": "^4.0.0",
+    "@sveltejs/kit": "^2.43.5",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "@types/eslint": "^8.56.0",
     "autoprefixer": "^10.4.16",
@@ -33,6 +33,6 @@
     "vite": "^5.0.3"
   },
   "dependencies": {
-    "lucide-svelte": "^0.294.0"
+    "lucide-svelte": "^0.544.0"
   }
 }
