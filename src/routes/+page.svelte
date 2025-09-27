@@ -249,14 +249,7 @@
 		<h2 id="featured-video" class="font-display text-3xl text-gold-200">Featured Performance</h2>
 		<div class="mt-6 rounded-2xl overflow-hidden border border-maroon-700 bg-maroon-800/50">
 			<div class="aspect-video">
-				<iframe
-					class="w-full h-full"
-					src="https://www.youtube.com/watch?v=yCaKhNMtVoc"
-					title="Performance Video"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					allowfullscreen
-				></iframe>
+				<iframe width="1424" height="783" src="https://www.youtube.com/embed/yCaKhNMtVoc" title="Poorna Chandra Bimba | Ragamalika | Rupakam | Muthuswamy Dikshitar | Swetaranyam Sisters" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			</div>
 		</div>
 	</div>
