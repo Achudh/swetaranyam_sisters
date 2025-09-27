@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.gold-border {
+	background-image: linear-gradient(
+		to right,
+		transparent,
+		rgba(232, 184, 74, 0.6),
+		transparent
+	);
+	height: 1px;
+}
+
+/* Smooth scrolling */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #2a0b0b;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #e8b84a;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #c79c39;
+}
+
+/* Focus styles */
+.focus-ring {
+	@apply focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2 focus:ring-offset-maroon-900;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fade-in {
+	animation: fadeIn 0.6s ease-out;
+}
+
+/* Loading spinner */
+.spinner {
+	border: 2px solid #4e1313;
+	border-top: 2px solid #e8b84a;
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+/* Card hover effects */
+.card-hover {
+	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+	background: linear-gradient(135deg, #e8b84a, #ffd142);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+/* Responsive typography */
+@layer utilities {
+	.text-responsive-xl {
+		@apply text-2xl sm:text-3xl lg:text-4xl;
+	}
+	
+	.text-responsive-lg {
+		@apply text-xl sm:text-2xl lg:text-3xl;
+	}
+	
+	.text-responsive-base {
+		@apply text-base sm:text-lg;
+	}
+}
+
+/* Print styles */
+@media print {
+	.no-print {
+		display: none !important;
+	}
+}
