@@ -3,20 +3,18 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: vitePreprocess(),
-	kit: {
-		adapter: adapter({
-			// Vercel configuration
-			runtime: 'nodejs20.x',
-			regions: ['iad1'], // US East region
-			split: true, // Enable function splitting for better performance
-			external: [],
-			envPrefixes: ['PUBLIC_']
-		}),
-		prerender: {
-			handleHttpError: 'warn'
-		}
-	}
+  preprocess: vitePreprocess(),
+  kit: {
+    adapter: adapter({
+      split: true,
+      regions: ['iad1'],
+      envPrefixes: ['PUBLIC_']
+    }),
+    prerender: {
+      handleHttpError: 'warn',
+      entries: ['*'] // prerender all routes
+    }
+  }
 };
 
 export default config;
