@@ -6,13 +6,14 @@ const config = {
   preprocess: vitePreprocess(),
   kit: {
     adapter: adapter({
+      runtime: 'nodejs20.x', // explicitly set Node 20
       split: true,
       regions: ['iad1'],
       envPrefixes: ['PUBLIC_']
     }),
     prerender: {
       handleHttpError: 'warn',
-      entries: ['*'] // prerender all routes
+      entries: ['*']
     }
   }
 };
