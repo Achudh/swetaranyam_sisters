@@ -190,6 +190,7 @@
 			</div>
 		</div>
 	</div>
+	
 </section>
 
 <!-- Academic & Educational Contributions -->
