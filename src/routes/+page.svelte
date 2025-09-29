@@ -53,7 +53,7 @@
 
 <svelte:head>
 	<title>Swetaranyam Sisters | Carnatic Vocal Duo</title>
-	<meta name="description" content="R. Nithya & R. Vidya - acclaimed Carnatic vocalists with over 25 years of concerts, teaching, and research across India and internationally." />
+	<meta name="description" content="Dr. R Nithya & Dr. R Vidya - acclaimed Carnatic vocalists with over 25 years of concerts, teaching, and research across India and internationally." />
 </svelte:head>
 
 <!-- Hero Section -->
@@ -102,7 +102,7 @@
 				Preserving Tradition, Creating Legacy
 			</h1>
 			<p class="text-lg text-amber-100/90 mb-8">
-				Dr. R. Nithya & Dr. R. Vidya - acclaimed Carnatic vocalists with over 25 years of concerts, teaching, and research across India and internationally.
+				Dr. Dr. R Nithya & Dr. Dr. R Vidya - acclaimed Carnatic vocalists with over 25 years of concerts, teaching, and research across India and internationally.
 			</p>
 			<div class="flex flex-wrap gap-3">
 				<a
@@ -190,7 +190,7 @@
 		<div in:fade={{ delay: 200 }}>
 			<h2 class="font-display text-3xl text-gold-200">About the Artists</h2>
 			<p class="mt-4 text-amber-100/90">
-				Disciples in the rich guru parampara of Carnatic music, the Swetaranyam Sisters have performed across premier sabhas in Chennai and beyond, presented lec-dems, accompanied dance productions, and trained numerous students worldwide.
+				Disciples hailing from a rich guru parampara of Carnatic music. The Swetaranyam Sisters have performed across premier sabhas in Chennai and beyond, presented lec-dems, accompanied dance productions, and are extensively training numerous students worldwide.
 			</p>
 			<div class="mt-6 flex gap-3">
 				<a
@@ -222,40 +222,44 @@
 <section id="research" class="py-14" aria-labelledby="research-heading">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<h2 id="research-heading" class="font-display text-3xl text-gold-200">Research Works</h2>
-		<div class="mt-6 grid gap-6 md:grid-cols-2">
-			{#each researchWorks as work}
-				<details class="rounded-2xl border border-maroon-700 bg-maroon-900/60 p-6 {work.id === '1' ? 'open' : ''}">
-					<summary class="font-semibold cursor-pointer text-amber-50">
-						Doctoral Thesis - R. {work.author === 'nithya' ? 'Nithya' : 'Vidya'}
-					</summary>
-					<p class="mt-3 text-sm text-amber-100/85">{work.title}</p>
-				</details>
-			{/each}
+		<div class="py-8">
+			Explore the scholarly contributions of Dr. R Nithya & Dr. R Vidya in the field of Carnatic music research and tradition preservation.
 		</div>
-		<div class="mt-6">
+		<div class="">
 			<a
 				href="/research"
-				class="inline-flex rounded-full border border-gold-600 px-5 py-2.5 text-gold-200 hover:bg-maroon-800/60 transition-colors"
+				class="inline-flex rounded-full bg-gold-600 text-maroon-900 px-5 py-2.5 font-semibold hover:bg-gold-500 transition-colors"
 			>
-				Read More
+				View Research Works
 			</a>
 		</div>
 	</div>
 </section>
 
 <!-- Featured Video Section -->
-<section class="py-14" aria-labelledby="featured-video">
+<section class="bg-maroon-800/40 py-14" aria-labelledby="featured-video">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<h2 id="featured-video" class="font-display text-3xl text-gold-200">Featured Performance</h2>
-		<div class="mt-6 rounded-2xl overflow-hidden border border-maroon-700 bg-maroon-800/50">
-			<div class="aspect-video">
-				<iframe width="1424" height="783" src="https://www.youtube.com/embed/yCaKhNMtVoc" title="Poorna Chandra Bimba | Ragamalika | Rupakam | Muthuswamy Dikshitar | Swetaranyam Sisters" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			</div>
+	  <h2 id="featured-video" class="font-display text-3xl text-gold-200">
+		Featured Performance
+	  </h2>
+	  <div class="mt-6 rounded-2xl overflow-hidden border border-maroon-700 bg-maroon-800/50">
+		<div class="aspect-video">
+		  <iframe
+			class="w-full h-full"
+			src="https://www.youtube.com/embed/yCaKhNMtVoc"
+			title="Poorna Chandra Bimba | Ragamalika | Rupakam | Muthuswamy Dikshitar | Swetaranyam Sisters"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen
+		  ></iframe>
 		</div>
+	  </div>
 	</div>
-</section>
+  </section>
+  
 
-<!-- Testimonials Section -->
+<!-- Testimonials Section
 <section class="py-14 bg-maroon-800/40" aria-labelledby="testimonials">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<h2 id="testimonials" class="font-display text-3xl text-gold-200">Words from Students & Organizers</h2>
@@ -272,7 +276,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <!-- Contact Section -->
 <section id="contact" class="py-16" aria-labelledby="contact-heading">
@@ -281,7 +285,7 @@
 			<div>
 				<h2 id="contact-heading" class="font-display text-3xl text-gold-200">Contact & Bookings</h2>
 				<p class="mt-3 text-amber-100/90">
-					For concerts, lecture-demonstrations, dance productions, or classes, send a message and we'll get back shortly.
+					For concerts, workshops and classes, send a message and we'll get back shortly.
 				</p>
 				<div class="mt-6 space-y-2 text-amber-100/85">
 					<p>

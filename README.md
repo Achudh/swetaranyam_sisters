@@ -1,6 +1,6 @@
 # Swetaranyam Sisters Website
 
-A modern, responsive website for the Swetaranyam Sisters - R. Nithya & R. Vidya, acclaimed Carnatic vocalists. Built with SvelteKit and optimized for Vercel deployment.
+A modern, responsive website for the Swetaranyam Sisters - Dr. R Nithya & Dr. R Vidya, acclaimed Carnatic vocalists. Built with SvelteKit and optimized for Vercel deployment.
 
 ## Features
 

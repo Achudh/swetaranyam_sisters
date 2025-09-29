@@ -3,7 +3,7 @@
 	import Pagination from '$lib/components/ui/Pagination.svelte';
 	import { Calendar, MapPin, Clock } from 'lucide-svelte';
 	import { formatDate } from '$lib/utils';
-	
+
 	export let data: PageData;
 	
 	$: ({ performances, pagination } = data);
@@ -19,7 +19,7 @@
 		<div class="text-center mb-12">
 			<h1 class="font-display text-4xl sm:text-5xl text-gold-200 mb-4">Upcoming Performances</h1>
 			<p class="text-lg text-amber-100/90 max-w-3xl mx-auto">
-				Experience the soulful renditions of traditional Carnatic music by R. Nithya & R. Vidya at premier venues across India and internationally.
+				Experience the soulful renditions of traditional Carnatic music by Dr. R Nithya & Dr. R Vidya at premier venues across India and internationally.
 			</p>
 		</div>
 		
@@ -48,8 +48,27 @@
 							<div class="space-y-2 text-sm text-amber-100/80">
 								<div class="flex items-center gap-2">
 									<Calendar class="w-4 h-4 text-gold-400" />
-									<span>{formatDate(performance.date, 'long')}</span>
-								</div>
+								  
+									<!-- Date span -->
+									<span>
+									  {new Date(performance.date).toLocaleDateString('en-US', {
+										month: 'long',
+										day: 'numeric',
+										year: 'numeric'
+									  })}
+									</span>
+									<Clock class="w-4 h-4 text-gold-400" />
+								  
+									<!-- Time span -->
+									<span>
+									  {new Date(performance.date).toLocaleTimeString('en-US', {
+										hour: 'numeric',
+										minute: 'numeric',
+										hour12: true
+									  })}
+									</span>
+								  </div>
+								  
 								
 								<div class="flex items-center gap-2">
 									<MapPin class="w-4 h-4 text-gold-400" />
@@ -58,8 +77,15 @@
 								
 								{#if performance.accompaniment && performance.accompaniment.length > 0}
 									<div class="flex items-center gap-2">
-										<Clock class="w-4 h-4 text-gold-400" />
-										<span>With {performance.accompaniment.join(', ')}</span>
+										<ul class="space-y-1 text-sm text-amber-100/85">
+											{#each performance.accompaniment as perf}
+												<li class="flex items-start gap-2">
+													<span class="text-gold-400 mt-1">•</span>
+													<span>{perf}</span>
+												</li>
+											{/each}
+										</ul>
+										<!-- <span>With {performance.accompaniment.join(', ')}</span> -->
 									</div>
 								{/if}
 							</div>
@@ -77,7 +103,7 @@
 									href="#" 
 									class="text-gold-300 underline underline-offset-4 hover:text-gold-200 transition-colors"
 								>
-									Get Tickets
+									Event info
 								</a>
 							</div>
 						</div>

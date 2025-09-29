@@ -76,7 +76,7 @@
 					</div>
 					
 					<a
-						href="/#contact"
+						href="/contact"
 						class="w-full inline-flex justify-center items-center rounded-full bg-gold-600 text-maroon-900 px-4 py-2 font-semibold hover:bg-gold-500 transition-colors"
 					>
 						Enroll Now
@@ -89,22 +89,17 @@
 			<div class="rounded-2xl border border-maroon-700 bg-maroon-800/60 p-8 max-w-4xl mx-auto">
 				<h2 class="font-display text-2xl text-gold-200 mb-4">Ready to Start Your Musical Journey?</h2>
 				<p class="text-amber-100/90 mb-6">
-					Whether you're a complete beginner or an experienced musician looking to refine your skills, 
+					Whether you're a beginner or an advanced student of music looking to refine your skills, 
 					we offer personalized instruction that respects traditional methods while adapting to modern learning needs.
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a
-						href="/#contact"
+						href="/contact"
 						class="inline-flex items-center justify-center rounded-full bg-gold-600 text-maroon-900 px-6 py-3 font-semibold hover:bg-gold-500 transition-colors"
 					>
-						Get Started Today
+					Ask Questions
 					</a>
-					<a
-						href="/#contact"
-						class="inline-flex items-center justify-center rounded-full border border-gold-600 text-gold-200 px-6 py-3 font-semibold hover:bg-maroon-800/60 transition-colors"
-					>
-						Ask Questions
-					</a>
+				
 				</div>
 			</div>
 		</div>

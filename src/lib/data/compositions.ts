@@ -79,7 +79,7 @@ export const compositionResearchData: CompositionResearchData = {
 				'Unique composer voices'
 			],
 			icon: 'Users',
-			quote: 'Each composer\'s unique voice emerges clearly when their works are examined in the same musical framework.'
+			quote: 'Each composer\'s unique creation emerges clearly when their works are examined in the same musical framework.'
 		},
 		{
 			id: 'thematic',
@@ -189,7 +189,7 @@ export const compositionResearchData: CompositionResearchData = {
 // Related research work data
 export const compositionResearchWork: ResearchWork = {
 	id: 'composition-research',
-	author: 'vidya',
+	author: 'Dr. R Vidya',
 	title: 'Lesser known composers in Saṅgīta Sampradāya Pradarśini - A Study',
 	type: 'thesis',
 	description: 'Research on lesser known composers in Carnatic music tradition with emphasis on contextualizing and curating compositions across time',

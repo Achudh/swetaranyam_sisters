@@ -49,7 +49,7 @@ export interface Album extends MediaItem {
 	tracklist: {
 		title: string;
 		duration: string;
-		raaga: string;
+		Raga: string;
 		composer: string;
 	}[];
 	label: string;
@@ -73,7 +73,7 @@ export interface TeachingProgram {
 
 export interface ResearchWork {
 	id: string;
-	author: 'nithya' | 'vidya' | 'both';
+	author: 'Dr. R Nithya' | 'Dr. R Vidya' | 'both';
 	title: string;
 	type: 'thesis' | 'paper' | 'presentation' | 'book';
 	description: string;

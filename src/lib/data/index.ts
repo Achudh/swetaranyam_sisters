@@ -1,35 +1,22 @@
 import type { Performance, Event, MediaItem, Album, TeachingProgram, ResearchWork, Testimonial } from '../types';
 
 // Export research data
-export { raagaResearchData, raagaResearchWork } from './raagas';
+export { RagaResearchData, RagaResearchWork } from './ragas';
 export { compositionResearchData, compositionResearchWork } from './compositions';
 
 // Sample data - in production, this would come from a CMS or API
 export const performances: Performance[] = [
 	{
 		id: '1',
-		title: 'Sri Parthasarathy Swami Sabha',
-		date: '2024-12-18T19:00:00Z',
-		venue: 'Sri Parthasarathy Swami Sabha',
+		title: 'Thematic Concert',
+		date: '2025-10-06T16:00:00Z',
+		venue: 'Raga Sudha Hall',
 		location: 'Mylapore, Chennai',
-		description: 'Main concert with violin and mridangam accompaniment',
+		description: 'Special thematic concert',
 		type: 'concert',
 		status: 'upcoming',
-		image: 'https://placehold.co/800x600/3b0f0f/f7e7c6?text=Concert+Image',
-		accompaniment: ['Violin', 'Mridangam'],
-		tags: ['season', 'chennai', 'main-concert']
-	},
-	{
-		id: '2',
-		title: 'Cleveland Thyagaraja Aradhana',
-		date: '2024-04-12T16:00:00Z',
-		venue: 'Cleveland Thyagaraja Aradhana',
-		location: 'Cleveland, USA',
-		description: 'Special thematic presentation with lec-dem segment',
-		type: 'festival',
-		status: 'upcoming',
 		image: 'https://placehold.co/800x600/3b0f0f/f7e7c6?text=Festival+Image',
-		accompaniment: ['Violin', 'Mridangam'],
+		accompaniment: ['Violin by R.Raghul', 'Mridangam by B.Sivaraman', 'Kanjira by Sunil Kumar'],
 		tags: ['festival', 'international', 'lec-dem']
 	}
 ];
@@ -83,13 +70,13 @@ export const albums: Album[] = [
 			{
 				title: 'Track 1',
 				duration: '4:30',
-				raaga: 'Kalyani',
+				Raga: 'Kalyani',
 				composer: 'Traditional'
 			},
 			{
 				title: 'Track 2',
 				duration: '5:15',
-				raaga: 'Bhairavi',
+				Raga: 'Bhairavi',
 				composer: 'Traditional'
 			}
 		],
@@ -110,7 +97,7 @@ export const albums: Album[] = [
 			{
 				title: 'Track 1',
 				duration: '3:45',
-				raaga: 'Hamsadhwani',
+				Raga: 'Hamsadhwani',
 				composer: 'Traditional'
 			}
 		],
@@ -141,7 +128,12 @@ export const teachingPrograms: TeachingProgram[] = [
 		duration: 'Self paced',
 		format: "Offline and Online",
 		topics: ['Śruti alignment & exercises', 'Geethams & simple swaras', 'Laya basics'],
-		prerequisites: ['Basic understanding of music', 'Commitment to regular practice'],
+		prerequisites: [
+			'Should have completed 7 Years',
+			'Basic understanding of music',
+			'Commitment to regular practice',
+			'Regularly attend classes',
+		],
 		contactInfo: 'sriswetaranyam@gmail.com'
 	},
 	{
@@ -152,7 +144,9 @@ export const teachingPrograms: TeachingProgram[] = [
 		duration: 'Self paced',
 		format: 'Offline and Online',
 		topics: ['Varnams & kritis', 'Manodharma introduction', 'Taalam & tempo control'],
-		prerequisites: ['Completion of beginner course', 'Basic knowledge of raagas'],
+		prerequisites: ['Completion of beginner course', 'Should have completed Geethams and Swarajathis', 'Ability to sing Sarali varisai to Alankarams in three speeds',
+			'Commitment to regular practice',
+			'Regularly attend classes',],
 		contactInfo: 'sriswetaranyam@gmail.com'
 	},
 	{
@@ -163,7 +157,9 @@ export const teachingPrograms: TeachingProgram[] = [
 		duration: 'Self paced',
 		format: 'Offline and Online',
 		topics: ['Alapana, neraval, swaraprasthara', 'Concert planning & repertoire', 'Stagecraft & voice care'],
-		prerequisites: ['Completion of intermediate course'],
+		prerequisites: ['Completion of intermediate course', 'Minimum of 10 Adi tala varnams, two Ata tala varnams', 'Ability to sing varnam in two speeds',
+			'Commitment to regular practice',
+			'Regularly attend classes',],
 		contactInfo: 'sriswetaranyam@gmail.com'
 	}
 ];
@@ -171,18 +167,18 @@ export const teachingPrograms: TeachingProgram[] = [
 export const researchWorks: ResearchWork[] = [
 	{
 		id: '1',
-		author: 'nithya',
+		author: 'Dr. R Nithya',
 		title: 'Development of rāga-s with special reference to Rāgalakṣaṇamu of Śāha Mahārāja',
 		type: 'thesis',
-		description: 'Doctoral research on the development of raagas',
+		description: 'Doctoral research on the development of Ragas',
 		url: '/raagas',
-		abstract: 'This research explores the development of raagas with special reference to the Rāgalakṣaṇamu of Śāha Mahārāja...',
-		tags: ['raaga', 'development', 'traditional-music'],
+		abstract: 'This research explores the development of Ragas with special reference to the Rāgalakṣaṇamu of Śāha Mahārāja...',
+		tags: ['Raga', 'development', 'traditional-music'],
 		buttonText: 'Explore Rāga Research'
 	},
 	{
 		id: '2',
-		author: 'vidya',
+		author: 'Dr. R Vidya',
 		title: 'Lesser known composers in Saṅgīta Sampradāya Pradarśini - A Study',
 		type: 'thesis',
 		description: 'Research on lesser known composers in Carnatic music tradition',

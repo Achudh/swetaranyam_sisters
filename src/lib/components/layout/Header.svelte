@@ -36,7 +36,7 @@
 				<a class="hover:text-gold-300 transition-colors" href="/events">Events</a>
 				<a class="hover:text-gold-300 transition-colors" href="/contact">Contact</a>
 				<a
-					href="/#contact"
+					href="/contact"
 					class="ml-2 inline-flex items-center gap-2 rounded-full bg-gold-600 text-maroon-900 px-4 py-2 font-semibold hover:bg-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-300 transition-colors"
 				>
 					Book Us
@@ -68,9 +68,9 @@
 				<a class="block py-2 hover:text-gold-300 transition-colors" href="/research" on:click={closeMobileMenu}>Research</a>
 				<a class="block py-2 hover:text-gold-300 transition-colors" href="/media" on:click={closeMobileMenu}>Media</a>
 				<a class="block py-2 hover:text-gold-300 transition-colors" href="/events" on:click={closeMobileMenu}>Events</a>
-				<a class="block py-2 hover:text-gold-300 transition-colors" href="/#contact" on:click={closeMobileMenu}>Contact</a>
+				<a class="block py-2 hover:text-gold-300 transition-colors" href="/contact" on:click={closeMobileMenu}>Contact</a>
 				<a
-					href="/#contact"
+					href="/contact"
 					class="inline-flex items-center gap-2 rounded-full bg-gold-600 text-maroon-900 px-4 py-2 font-semibold hover:bg-gold-500 transition-colors"
 					on:click={closeMobileMenu}
 				>

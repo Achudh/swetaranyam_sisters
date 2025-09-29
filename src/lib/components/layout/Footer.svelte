@@ -55,7 +55,7 @@
 		
 		<div class="md:text-right">
 			<a
-				href="/#contact"
+				href="/contact"
 				class="inline-flex items-center gap-2 rounded-full bg-gold-600 text-maroon-900 px-5 py-2.5 font-semibold hover:bg-gold-500 transition-colors"
 			>
 				Book Us

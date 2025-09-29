@@ -7,7 +7,7 @@
 	<title>About | Swetaranyam Sisters</title>
 	<meta
 		name="description"
-		content="Learn about the musical journey, training, and achievements of Dr. R. Nithya & Dr. R. Vidya - acclaimed Carnatic vocalists."
+		content="Learn about the musical journey, training, and achievements of Dr. Dr. R Nithya & Dr. Dr. R Vidya - acclaimed Carnatic vocalists."
 	/>
 </svelte:head>
 
@@ -40,7 +40,7 @@
 				class="text-xl text-amber-100/90 max-w-3xl mx-auto"
 				in:fade={{ delay: 400 }}
 			>
-				Dr. R. Nithya & Dr. R. Vidya - A journey through tradition,
+				Dr. Dr. R Nithya & Dr. Dr. R Vidya - A journey through tradition,
 				excellence, and dedication to Carnatic music
 			</p>
 		</div>
@@ -277,7 +277,7 @@
 					Rāga Research
 				</h3>
 				<p class="text-amber-100/85 mb-4">
-					Dr. R. Nithya's doctoral research on "Development of rāga-s
+					Dr. Dr. R Nithya's doctoral research on "Development of rāga-s
 					with special reference to Rāgalakṣaṇamu of Śāha Mahārāja"
 				</p>
 				<span class="text-gold-400 group-hover:text-gold-300"
@@ -295,7 +295,7 @@
 					Composer Research
 				</h3>
 				<p class="text-amber-100/85 mb-4">
-					Dr. R. Vidya's study on "Lesser known composers in Saṅgīta
+					Dr. Dr. R Vidya's study on "Lesser known composers in Saṅgīta
 					Sampradāya Pradarśini"
 				</p>
 				<span class="text-gold-400 group-hover:text-gold-300"
@@ -322,7 +322,7 @@
 		</p>
 		<div class="flex flex-wrap justify-center gap-4">
 			<a
-				href="/#contact"
+				href="/contact"
 				class="inline-flex items-center gap-2 rounded-full bg-gold-600 text-maroon-900 px-6 py-3 font-semibold hover:bg-gold-500 transition-colors"
 			>
 				Book a Performance

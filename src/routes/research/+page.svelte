@@ -6,7 +6,7 @@
 
 <svelte:head>
 	<title>Research Works | Swetaranyam Sisters</title>
-	<meta name="description" content="Explore the research contributions of R. Nithya & R. Vidya in Carnatic music, including doctoral theses and scholarly work." />
+	<meta name="description" content="Explore the research contributions of Dr. R Nithya & Dr. R Vidya in Carnatic music, including doctoral theses and scholarly work." />
 </svelte:head>
 
 <div class="py-14">
@@ -14,7 +14,7 @@
 		<div class="text-center mb-12">
 			<h1 class="font-display text-4xl sm:text-5xl text-gold-200 mb-4">Research Works</h1>
 			<p class="text-lg text-amber-100/90 max-w-3xl mx-auto">
-				Explore the scholarly contributions of R. Nithya & R. Vidya in the field of Carnatic music research and tradition preservation.
+				Explore the scholarly contributions of Dr. R Nithya & Dr. R Vidya in the field of Carnatic music research and tradition preservation.
 			</p>
 		</div>
 		
@@ -28,7 +28,7 @@
 						<div class="flex-1">
 							<div class="flex items-center gap-2 mb-2">
 								<User class="w-4 h-4 text-gold-400" />
-								<span class="text-sm text-gold-300">R. {work.author === 'nithya' ? 'Nithya' : 'Vidya'}</span>
+								<span class="text-sm text-gold-300">{work.author}</span>
 							</div>
 							<h3 class="font-display text-xl text-gold-200 mb-2">{work.title}</h3>
 							<div class="flex items-center gap-4 text-sm text-amber-100/60">
@@ -105,7 +105,7 @@
 					<div>
 						<h3 class="font-semibold text-gold-300 mb-2">Research Focus Areas</h3>
 						<ul class="space-y-1 text-sm text-amber-100/85">
-							<li>• Raaga Development and Classification</li>
+							<li>• Raga Development and Classification</li>
 							<li>• Lesser-known Composers and Their Works</li>
 							<li>• Traditional Music Pedagogy</li>
 							<li>• Performance Practice Documentation</li>
@@ -123,7 +123,7 @@
 				</div>
 				<div class="mt-6">
 					<a
-						href="/#contact"
+						href="/contact"
 						class="inline-flex items-center justify-center rounded-full bg-gold-600 text-maroon-900 px-6 py-3 font-semibold hover:bg-gold-500 transition-colors"
 					>
 						Discuss Research Collaboration

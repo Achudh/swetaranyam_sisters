@@ -1,6 +1,6 @@
 import type { ResearchWork } from '../types';
 
-export interface RaagaResearchAspect {
+export interface RagaResearchAspect {
 	id: string;
 	title: string;
 	description: string;
@@ -9,11 +9,11 @@ export interface RaagaResearchAspect {
 	quote: string;
 }
 
-export interface RaagaResearchData {
+export interface RagaResearchData {
 	title: string;
 	subtitle: string;
 	introduction: string;
-	aspects: RaagaResearchAspect[];
+	aspects: RagaResearchAspect[];
 	educationalValue: {
 		title: string;
 		description: string;
@@ -34,7 +34,7 @@ export interface RaagaResearchData {
 	};
 }
 
-export const raagaResearchData: RaagaResearchData = {
+export const RagaResearchData: RagaResearchData = {
 	title: 'Research on Rāgas',
 	subtitle: 'The Swetaranyam Sisters\' research is framed around Carnatic music, especially with a chronological and analytical approach. One of their highlighted areas of contribution is their work on rāgas.',
 	introduction: 'Their approach isn\'t just about singing or listing ragas, but more about:',
@@ -42,7 +42,7 @@ export const raagaResearchData: RaagaResearchData = {
 		{
 			id: 'chronological',
 			title: '1. Chronological Exploration',
-			description: 'They trace the evolution of ragas across time, connecting how a rāga was interpreted during the Trinity period (Tyagaraja, Muthuswami Dikshitar, Shyama Shastri) and how it transformed later.',
+			description: 'They trace the evolution of ragas across time, connecting how a rāga was interpreted before, during and after the Trinity period. (Tyagaraja, Muthuswami Dikshitar, Shyama Shastri)',
 			details: [
 				'Historical context and evolution documentation',
 				'Trinity period interpretation analysis',
@@ -55,7 +55,7 @@ export const raagaResearchData: RaagaResearchData = {
 		{
 			id: 'comparative',
 			title: '2. Comparative Analysis',
-			description: 'They compare the same rāga as seen in different composers\' works—e.g., how Bhairavi is treated differently in a kriti of Tyagaraja versus Dikshitar.',
+			description: 'They compare the same rāga as seen in different schools of music —e.g., how Narayani is treated differently in a kriti of Tyagaraja versus Dikshitar.',
 			details: [
 				'Cross-composer rāga treatment analysis',
 				'Bhairavi as example of comparative study',
@@ -132,14 +132,14 @@ export const raagaResearchData: RaagaResearchData = {
 };
 
 // Related research work data
-export const raagaResearchWork: ResearchWork = {
-	id: 'raaga-research',
-	author: 'nithya',
+export const RagaResearchWork: ResearchWork = {
+	id: 'Raga-research',
+	author: 'Dr. R Nithya',
 	title: 'Development of rāga-s with special reference to Rāgalakṣaṇamu of Śāha Mahārāja',
 	type: 'thesis',
-	description: 'Doctoral research on the development of raagas with chronological and analytical approach',
+	description: 'Doctoral research on the development of Ragas with chronological and analytical approach',
 	url: '/raagas',
-	abstract: 'This research explores the development of raagas with special reference to the Rāgalakṣaṇamu of Śāha Mahārāja, focusing on chronological evolution, comparative analysis across composers, and thematic curation of rāgas in the Carnatic tradition.',
-	tags: ['raaga', 'development', 'traditional-music', 'chronological-analysis'],
+	abstract: 'This research explores the development of Ragas with special reference to the Rāgalakṣaṇamu of Śāha Mahārāja, focusing on chronological evolution, comparative analysis across composers, and thematic curation of rāgas in the Carnatic tradition.',
+	tags: ['Raga', 'development', 'traditional-music', 'chronological-analysis'],
 	buttonText: 'Explore Rāga Research'
 };

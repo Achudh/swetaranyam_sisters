@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Clock, Users, BookOpen, Music, Award, Lightbulb } from 'lucide-svelte';
-	import { raagaResearchData } from '$lib/data';
+	import { RagaResearchData } from '$lib/data';
 	
 	// Icon mapping for dynamic rendering
 	const iconMap = {
@@ -12,7 +12,7 @@
 		Lightbulb
 	};
 	
-	$: ({ title, subtitle, introduction, aspects, educationalValue, impact } = raagaResearchData);
+	$: ({ title, subtitle, introduction, aspects, educationalValue, impact } = RagaResearchData);
 </script>
 
 <svelte:head>
@@ -115,7 +115,7 @@
 						Attend a Performance
 					</a>
 					<a
-						href="/#contact"
+						href="/contact"
 						class="inline-flex items-center justify-center rounded-full border border-gold-600 text-gold-200 px-6 py-3 font-semibold hover:bg-maroon-800/60 transition-colors"
 					>
 						Discuss Research

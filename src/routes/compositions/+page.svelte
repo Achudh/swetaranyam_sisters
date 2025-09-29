@@ -165,7 +165,7 @@
 						Attend a Performance
 					</a>
 					<a
-						href="/#contact"
+						href="/contact"
 						class="inline-flex items-center justify-center rounded-full border border-gold-600 text-gold-200 px-6 py-3 font-semibold hover:bg-maroon-800/60 transition-colors"
 					>
 						Discuss Research
