@@ -28,7 +28,15 @@
 				{@html subtitle}
 			</p>
 		</div>
-		
+		<video 
+			src="/videos/temple manu.mp4" 
+			poster="/images/raaga_poster.png"
+			width="640" 
+			controls
+			class="mx-auto pb-8"
+			>
+				Your browser does not support the video tag.
+		</video>
 		<!-- Key Aspects Section -->
 		<div class="mb-16">
 			<h2 class="font-display text-3xl text-gold-200 mb-8 text-center">Key Aspects of Their Work on Rāgas</h2>

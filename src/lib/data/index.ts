@@ -23,66 +23,66 @@ export const performances: Performance[] = [
 ];
 
 export const albums: Album[] = [
-	{
-		id: '1',
-		title: 'Shri Mukha Kirtanas',
-		type: 'album',
-		description: 'Classical Carnatic vocal album featuring traditional compositions',
-		thumbnail: 'https://placehold.co/800x800/3b0f0f/f7e7c6?text=Shri+Mukha+Kirtanas',
-		releaseDate: '2023-01-01',
-		label: 'Super Audios (Madras) Pvt. Ltd.',
-		format: 'CD/Digital',
-		buyUrl: '#',
-		listenUrl: '#',
-		tracklist: [
-			{
-				title: 'Track 1',
-				duration: '4:30',
-				Raga: 'Kalyani',
-				composer: 'Traditional'
-			},
-			{
-				title: 'Track 2',
-				duration: '5:15',
-				Raga: 'Bhairavi',
-				composer: 'Traditional'
-			}
-		],
-		tags: ['classical', 'traditional', 'vocal']
-	},
-	{
-		id: '2',
-		title: 'Companion',
-		type: 'album',
-		description: 'Contemporary Carnatic vocal album',
-		thumbnail: 'https://placehold.co/800x800/3b0f0f/f7e7c6?text=Companion',
-		releaseDate: '2023-06-01',
-		label: 'Ajna Productions Pvt. Ltd.',
-		format: 'CD/Digital',
-		buyUrl: '#',
-		listenUrl: '#',
-		tracklist: [
-			{
-				title: 'Track 1',
-				duration: '3:45',
-				Raga: 'Hamsadhwani',
-				composer: 'Traditional'
-			}
-		],
-		tags: ['contemporary', 'vocal', 'ensemble']
-	}
+	// {
+	// 	id: '1',
+	// 	title: 'Shri Mukha Kirtanas',
+	// 	type: 'album',
+	// 	description: 'Classical Carnatic vocal album featuring traditional compositions',
+	// 	thumbnail: 'https://placehold.co/800x800/3b0f0f/f7e7c6?text=Shri+Mukha+Kirtanas',
+	// 	releaseDate: '2023-01-01',
+	// 	label: 'Super Audios (Madras) Pvt. Ltd.',
+	// 	format: 'CD/Digital',
+	// 	buyUrl: '#',
+	// 	listenUrl: '#',
+	// 	tracklist: [
+	// 		{
+	// 			title: 'Track 1',
+	// 			duration: '4:30',
+	// 			Raga: 'Kalyani',
+	// 			composer: 'Traditional'
+	// 		},
+	// 		{
+	// 			title: 'Track 2',
+	// 			duration: '5:15',
+	// 			Raga: 'Bhairavi',
+	// 			composer: 'Traditional'
+	// 		}
+	// 	],
+	// 	tags: ['classical', 'traditional', 'vocal']
+	// },
+	// {
+	// 	id: '2',
+	// 	title: 'Companion',
+	// 	type: 'album',
+	// 	description: 'Contemporary Carnatic vocal album',
+	// 	thumbnail: 'https://placehold.co/800x800/3b0f0f/f7e7c6?text=Companion',
+	// 	releaseDate: '2023-06-01',
+	// 	label: 'Ajna Productions Pvt. Ltd.',
+	// 	format: 'CD/Digital',
+	// 	buyUrl: '#',
+	// 	listenUrl: '#',
+	// 	tracklist: [
+	// 		{
+	// 			title: 'Track 1',
+	// 			duration: '3:45',
+	// 			Raga: 'Hamsadhwani',
+	// 			composer: 'Traditional'
+	// 		}
+	// 	],
+	// 	tags: ['contemporary', 'vocal', 'ensemble']
+	// }
 ];
 
 export const mediaItems: MediaItem[] = [
 	{
 		id: '1',
 		title: 'Press & Interviews',
-		type: 'article',
-		description: 'Read features and watch appearances',
-		thumbnail: 'https://placehold.co/800x600/3b0f0f/f7e7c6?text=Press+Interview',
-		url: '#',
+		type: 'video',
+		description: 'An interview with The Art Infinite',
+		thumbnail: '/images/interview_poster.jpg',
+		url: 'https://youtu.be/Oc_FZr5uiXc',
 		platform: 'Various',
-		releaseDate: '2023-01-01',
+		releaseDate: '2021-12-02',
 		tags: ['press', 'interviews', 'features']
 	}
 ];

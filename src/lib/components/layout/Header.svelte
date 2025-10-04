@@ -33,6 +33,7 @@
 				<a class="hover:text-gold-300 transition-colors" href="/teaching">Teaching</a>
 				<a class="hover:text-gold-300 transition-colors" href="/research">Research</a>
 				<a class="hover:text-gold-300 transition-colors" href="/media">Media</a>
+				<a class="hover:text-gold-300 transition-colors" href="/gallery">Gallery</a>
 				<a class="hover:text-gold-300 transition-colors" href="/contact">Contact</a>
 				<a
 					href="/contact"
@@ -66,6 +67,7 @@
 				<a class="block py-2 hover:text-gold-300 transition-colors" href="/teaching" on:click={closeMobileMenu}>Teaching</a>
 				<a class="block py-2 hover:text-gold-300 transition-colors" href="/research" on:click={closeMobileMenu}>Research</a>
 				<a class="block py-2 hover:text-gold-300 transition-colors" href="/media" on:click={closeMobileMenu}>Media</a>
+				<a class="block py-2 hover:text-gold-300 transition-colors" href="/gallery" on:click={closeMobileMenu}>Gallery</a>
 				<a class="block py-2 hover:text-gold-300 transition-colors" href="/contact" on:click={closeMobileMenu}>Contact</a>
 				<a
 					href="/contact"

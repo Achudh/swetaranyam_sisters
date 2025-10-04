@@ -146,25 +146,25 @@
 			
 			<!-- Featured Albums -->
 			<a
-				href="/media"
+				href="/research"
 				class="group rounded-2xl overflow-hidden border border-maroon-700 bg-maroon-800/60 hover:bg-maroon-800 transition-all duration-300 card-hover"
 			>
 				<div class="aspect-[16/9] bg-maroon-700/50 grid place-items-center">
 					<img
 						src="/images/AKF_0041 copy.jpg"
-						alt="Featured album"
+						alt="Research"
 						class="h-80 w-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
 					/>
 				</div>
 				<div class="p-5">
-					<h3 class="font-display text-xl text-gold-200">Featured Album</h3>
-					<p class="mt-2 text-sm text-amber-100/80">Listen to "Shri Mukha Kirtanas" on your favourite platform.</p>
+					<h3 class="font-display text-xl text-gold-200">Research</h3>
+					<p class="mt-2 text-sm text-amber-100/80">Explore the scholarly contributions of Dr. R Nithya & Dr. R Vidya</p>
 				</div>
 			</a>
 			
 			<!-- Gallery -->
 			<a
-				href="/media"
+				href="/gallery"
 				class="group rounded-2xl overflow-hidden border border-maroon-700 bg-maroon-800/60 hover:bg-maroon-800 transition-all duration-300 card-hover"
 			>
 				<div class="aspect-[16/9] bg-maroon-700/50 grid place-items-center">
@@ -217,7 +217,7 @@
 	</div>
 </section>
 
-<!-- Research Section -->
+<!-- Research Section
 <section id="research" class="py-14" aria-labelledby="research-heading">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<h2 id="research-heading" class="font-display text-3xl text-gold-200">Research Works</h2>
@@ -234,7 +234,7 @@
 		</div>
 	</div>
 </section>
-
+ -->
 <!-- Featured Video Section -->
 <section class="bg-maroon-800/40 py-14" aria-labelledby="featured-video">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
