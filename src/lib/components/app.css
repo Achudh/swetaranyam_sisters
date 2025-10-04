@@ -111,3 +111,12 @@ html {
 		display: none !important;
 	}
 }
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #3b0d0c inset !important; /* match your bg-maroon-900/70 */
+  box-shadow: 0 0 0 1000px #3b0d0c inset !important;
+  -webkit-text-fill-color: #fef3c7 !important; /* match your text-amber-50 */
+  caret-color: #fef3c7 !important;
+  transition: background-color 9999s ease-in-out 0s;
+}

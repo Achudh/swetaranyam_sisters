@@ -7,13 +7,13 @@ export const load: PageServerLoad = async ({ url }) => {
 	const itemsPerPage = 6;
 	
 	// Filter upcoming performances
-	const upcomingPerformances = performances.filter(p => p.status === 'upcoming');
+	// const upcomingPerformances = performances.filter(p => p.status === 'upcoming');
 	
 	// Calculate pagination
-	const pagination = calculatePagination(page, upcomingPerformances.length, itemsPerPage);
+	const pagination = calculatePagination(page, performances.length, itemsPerPage);
 	
 	// Get items for current page
-	const paginatedPerformances = getPaginatedItems(upcomingPerformances, page, itemsPerPage);
+	const paginatedPerformances = getPaginatedItems(performances, page, itemsPerPage);
 	
 	return {
 		performances: paginatedPerformances,

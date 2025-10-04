@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { performances, events, albums, mediaItems, teachingPrograms, researchWorks, testimonials } from '$lib/data';
+	import { performances, albums, mediaItems, teachingPrograms, researchWorks, testimonials } from '$lib/data';
 	import { formatDate } from '$lib/utils';
 	import { ChevronLeft, ChevronRight } from 'lucide-svelte';
 	
 	// Get featured items
-	$: featuredEvents = events.slice(0, 3);
 	$: featuredAlbums = albums.slice(0, 2);
 	$: featuredTestimonials = testimonials.slice(0, 3);
 	
@@ -129,18 +128,18 @@
 		<div class="grid gap-6 md:grid-cols-3">
 			<!-- Featured Events -->
 			<a
-				href="/events"
+				href="/performances"
 				class="group rounded-2xl overflow-hidden border border-maroon-700 bg-maroon-800/60 hover:bg-maroon-800 transition-all duration-300 card-hover"
 			>
 				<div class="aspect-[16/9] bg-maroon-700/50 grid place-items-center">
 					<img
 						src="/images/AKF_0006-Enhanced-NR.jpg"
-						alt="Upcoming concerts"
+						alt="Upcoming performances"
 						class="h-80 w-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
 					/>
 				</div>
 				<div class="p-5">
-					<h3 class="font-display text-xl text-gold-200">Upcoming Concerts</h3>
+					<h3 class="font-display text-xl text-gold-200">Upcoming performances</h3>
 					<p class="mt-2 text-sm text-amber-100/80">See dates and venues for the December season and tours.</p>
 				</div>
 			</a>
@@ -278,37 +277,42 @@
 	</div>
 </section> -->
 
-<!-- Contact Section -->
 <section id="contact" class="py-16" aria-labelledby="contact-heading">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="grid lg:grid-cols-2 gap-10">
-			<div>
-				<h2 id="contact-heading" class="font-display text-3xl text-gold-200">Contact & Bookings</h2>
+		<div >
+			<div class="py-8">
+				<h2
+					id="contact-heading"
+					class="font-display text-3xl text-gold-200"
+				>
+					Contact & Bookings
+				</h2>
 				<p class="mt-3 text-amber-100/90">
-					For concerts, workshops and classes, send a message and we'll get back shortly.
+					For concerts, workshops and classes, send a message and
+					we'll get back shortly.
 				</p>
-				<div class="mt-6 space-y-2 text-amber-100/85">
-					<p>
-						<strong class="text-gold-300">Email:</strong> sriswetaranyam@gmail.com
-					</p>
-					<p>
-						<strong class="text-gold-300">Location:</strong> Thiruvanmiyur, Chennai
-					</p>
-				</div>
 			</div>
-			<form class="rounded-2xl border border-maroon-700 bg-maroon-800/60 p-6 space-y-4">
+			<form
+				class="rounded-2xl border border-maroon-700 bg-maroon-800/60 p-6 space-y-4"
+			>
 				<div class="grid sm:grid-cols-2 gap-4">
 					<div>
-						<label class="text-sm text-gold-200">Name</label>
+						<label for="name" class="text-sm text-gold-200"
+							>Name</label
+						>
 						<input
+							id="name"
 							type="text"
 							class="mt-1 w-full rounded-lg bg-maroon-900/70 border border-maroon-700 px-3 py-2 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
 							placeholder="Your name"
 						/>
 					</div>
 					<div>
-						<label class="text-sm text-gold-200">Email</label>
+						<label for="email" class="text-sm text-gold-200"
+							>Your Email</label
+						>
 						<input
+							id="email"
 							type="email"
 							class="mt-1 w-full rounded-lg bg-maroon-900/70 border border-maroon-700 px-3 py-2 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
 							placeholder="you@example.com"
@@ -316,17 +320,33 @@
 					</div>
 				</div>
 				<div>
-					<label class="text-sm text-gold-200">Inquiry Type</label>
-					<select class="mt-1 w-full rounded-lg bg-maroon-900/70 border border-maroon-700 px-3 py-2 text-amber-50 focus:outline-none focus:ring-2 focus:ring-gold-500">
-						<option>Concert Booking</option>
-						<option>Teaching / Classes</option>
-						<option>Research / Collaboration</option>
-						<option>Other</option>
-					</select>
+					<label for="organization" class="text-sm text-gold-200"
+						>Organization</label
+					>
+					<input
+						id="organization"
+						type="organization"
+						class="mt-1 w-full rounded-lg bg-maroon-900/70 border border-maroon-700 px-3 py-2 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
+						placeholder="Your Organization"
+					/>
 				</div>
 				<div>
-					<label class="text-sm text-gold-200">Message</label>
+					<label for="phone" class="text-sm text-gold-200"
+						>Your phone number</label
+					>
+					<input
+						id="phone"
+						type="phone"
+						class="mt-1 w-full rounded-lg bg-maroon-900/70 border border-maroon-700 px-3 py-2 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
+						placeholder="10 Digit Phone Number"
+					/>
+				</div>
+				<div>
+					<label for="message" class="text-sm text-gold-200"
+						>Message</label
+					>
 					<textarea
+						id="message"
 						rows="5"
 						class="mt-1 w-full rounded-lg bg-maroon-900/70 border border-maroon-700 px-3 py-2 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
 						placeholder="Tell us about your request..."
@@ -342,6 +362,7 @@
 		</div>
 	</div>
 </section>
+
 
 <style>
 	.transition-colors {

@@ -19,7 +19,7 @@
 		
 		<div class="grid gap-8 md:grid-cols-3">
 			{#each teachingPrograms as program}
-				<div class="rounded-2xl border border-maroon-700 bg-maroon-900/60 p-6 card-hover">
+				<div class="rounded-2xl border border-maroon-700 bg-maroon-900/60 p-6 card-hover flex flex-col h-full">
 					<div class="flex items-center gap-3 mb-4">
 						<div class="w-12 h-12 rounded-full bg-gold-600 flex items-center justify-center">
 							<BookOpen class="w-6 h-6 text-maroon-900" />
@@ -70,17 +70,18 @@
 						</div>
 					{/if}
 					
-					<div class="flex items-center gap-2 text-sm text-amber-100/80 mb-4">
-						<Mail class="w-4 h-4 text-gold-400" />
-						<span>Contact: {program.contactInfo}</span>
+					<div class="mt-auto">
+						<div class="flex items-center gap-2 text-sm text-amber-100/80 mb-4">
+							<Mail class="w-4 h-4 text-gold-400" />
+							<span>Contact: {program.contactInfo}</span>
+						</div>
+						<a
+							href="/contact"
+							class="w-full inline-flex justify-center items-center rounded-full bg-gold-600 text-maroon-900 px-4 py-2 font-semibold hover:bg-gold-500 transition-colors"
+						>
+							Enroll Now
+						</a>
 					</div>
-					
-					<a
-						href="/contact"
-						class="w-full inline-flex justify-center items-center rounded-full bg-gold-600 text-maroon-900 px-4 py-2 font-semibold hover:bg-gold-500 transition-colors"
-					>
-						Enroll Now
-					</a>
 				</div>
 			{/each}
 		</div>

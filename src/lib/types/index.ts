@@ -11,8 +11,15 @@ export interface Performance {
 	status: 'upcoming' | 'past' | 'cancelled';
 	image?: string;
 	videoUrl?: string;
+	locationUrl?: string;
 	accompaniment?: string[];
 	tags: string[];
+}
+export interface Track{
+	title: string,
+    artist: string,
+    src: string,
+    cover: string,
 }
 
 export interface Event {

@@ -31,9 +31,6 @@
 					<li>
 						<a class="hover:text-gold-300 transition-colors" href="/media">Media</a>
 					</li>
-					<li>
-						<a class="hover:text-gold-300 transition-colors" href="/events">Events</a>
-					</li>
 				</ul>
 			</div>
 			
@@ -41,13 +38,16 @@
 				<h4 class="font-semibold text-gold-300">Follow</h4>
 				<ul class="mt-2 space-y-2">
 					<li>
-						<a href="#" class="hover:text-gold-300 transition-colors">YouTube</a>
+						<a href="https://www.youtube.com/@swetaranyamsisters" class="hover:text-gold-300 transition-colors">YouTube</a>
 					</li>
 					<li>
-						<a href="#" class="hover:text-gold-300 transition-colors">Instagram</a>
+						<a href="https://www.instagram.com/swetaranyam_sisters" class="hover:text-gold-300 transition-colors">Instagram</a>
 					</li>
 					<li>
-						<a href="#" class="hover:text-gold-300 transition-colors">Facebook</a>
+						<a href="https://www.facebook.com/swetaranyam" class="hover:text-gold-300 transition-colors">Facebook</a>
+					</li>
+					<li>
+						<a href="mailto:swetaranyamsisters@gmail.com" class="hover:text-gold-300 transition-colors">Email</a>
 					</li>
 				</ul>
 			</div>

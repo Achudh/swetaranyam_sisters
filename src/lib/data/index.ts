@@ -13,43 +13,11 @@ export const performances: Performance[] = [
 		venue: 'Raga Sudha Hall',
 		location: 'Mylapore, Chennai',
 		description: 'Special thematic concert',
+		locationUrl: 'https://maps.app.goo.gl/oaeK7P6TxJFtNroz6',
 		type: 'concert',
 		status: 'upcoming',
-		image: 'https://placehold.co/800x600/3b0f0f/f7e7c6?text=Festival+Image',
+		image: '/images/ragasudha.PNG',
 		accompaniment: ['Violin by R.Raghul', 'Mridangam by B.Sivaraman', 'Kanjira by Sunil Kumar'],
-		tags: ['festival', 'international', 'lec-dem']
-	}
-];
-
-export const events: Event[] = [
-	{
-		id: '1',
-		title: 'Sri Parthasarathy Swami Sabha',
-		date: '2024-12-18',
-		time: '7:00 PM',
-		venue: 'Sri Parthasarathy Swami Sabha',
-		location: 'Mylapore, Chennai',
-		description: 'Main concert with violin and mridangam accompaniment',
-		type: 'concert',
-		status: 'upcoming',
-		image: 'https://placehold.co/800x600/3b0f0f/f7e7c6?text=Event+Image',
-		ticketUrl: '#',
-		calendarUrl: '#',
-		tags: ['season', 'chennai', 'main-concert']
-	},
-	{
-		id: '2',
-		title: 'Cleveland Thyagaraja Aradhana',
-		date: '2024-04-12',
-		time: '4:00 PM',
-		venue: 'Cleveland Thyagaraja Aradhana',
-		location: 'Cleveland, USA',
-		description: 'Special thematic presentation with lec-dem segment',
-		type: 'concert',
-		status: 'upcoming',
-		image: 'https://placehold.co/800x600/3b0f0f/f7e7c6?text=Festival+Image',
-		ticketUrl: '#',
-		calendarUrl: '#',
 		tags: ['festival', 'international', 'lec-dem']
 	}
 ];
@@ -134,7 +102,7 @@ export const teachingPrograms: TeachingProgram[] = [
 			'Commitment to regular practice',
 			'Regularly attend classes',
 		],
-		contactInfo: 'sriswetaranyam@gmail.com'
+		contactInfo: 'swetaranyamsisters@gmail.com'
 	},
 	{
 		id: '2',
@@ -147,7 +115,7 @@ export const teachingPrograms: TeachingProgram[] = [
 		prerequisites: ['Completion of beginner course', 'Should have completed Geethams and Swarajathis', 'Ability to sing Sarali varisai to Alankarams in three speeds',
 			'Commitment to regular practice',
 			'Regularly attend classes',],
-		contactInfo: 'sriswetaranyam@gmail.com'
+		contactInfo: 'swetaranyamsisters@gmail.com'
 	},
 	{
 		id: '3',
@@ -160,7 +128,7 @@ export const teachingPrograms: TeachingProgram[] = [
 		prerequisites: ['Completion of intermediate course', 'Minimum of 10 Adi tala varnams, two Ata tala varnams', 'Ability to sing varnam in two speeds',
 			'Commitment to regular practice',
 			'Regularly attend classes',],
-		contactInfo: 'sriswetaranyam@gmail.com'
+		contactInfo: 'swetaranyamsisters@gmail.com'
 	}
 ];
 

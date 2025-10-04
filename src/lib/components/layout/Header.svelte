@@ -33,7 +33,6 @@
 				<a class="hover:text-gold-300 transition-colors" href="/teaching">Teaching</a>
 				<a class="hover:text-gold-300 transition-colors" href="/research">Research</a>
 				<a class="hover:text-gold-300 transition-colors" href="/media">Media</a>
-				<a class="hover:text-gold-300 transition-colors" href="/events">Events</a>
 				<a class="hover:text-gold-300 transition-colors" href="/contact">Contact</a>
 				<a
 					href="/contact"
@@ -62,12 +61,11 @@
 	{#if mobileMenu}
 		<div class="md:hidden border-t border-maroon-600 bg-maroon-800/95">
 			<div class="px-4 py-4 space-y-2 text-sm">
-				<a class="block py-2 hover:text-gold-300 transition-colors" href="/#about" on:click={closeMobileMenu}>About</a>
+				<a class="block py-2 hover:text-gold-300 transition-colors" href="/about" on:click={closeMobileMenu}>About</a>
 				<a class="block py-2 hover:text-gold-300 transition-colors" href="/performances" on:click={closeMobileMenu}>Performances</a>
 				<a class="block py-2 hover:text-gold-300 transition-colors" href="/teaching" on:click={closeMobileMenu}>Teaching</a>
 				<a class="block py-2 hover:text-gold-300 transition-colors" href="/research" on:click={closeMobileMenu}>Research</a>
 				<a class="block py-2 hover:text-gold-300 transition-colors" href="/media" on:click={closeMobileMenu}>Media</a>
-				<a class="block py-2 hover:text-gold-300 transition-colors" href="/events" on:click={closeMobileMenu}>Events</a>
 				<a class="block py-2 hover:text-gold-300 transition-colors" href="/contact" on:click={closeMobileMenu}>Contact</a>
 				<a
 					href="/contact"

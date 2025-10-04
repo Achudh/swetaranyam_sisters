@@ -192,3 +192,79 @@ export function navigateWithParams(
 	
 	goto(url);
 }
+
+/**
+ * Generate Google Calendar and ICS links for an event
+ */
+export function getCalendarLinks({
+  title,
+  description,
+  location,
+  date,
+  time
+}: {
+  title: string;
+  description: string;
+  location: string;
+  date: string; // YYYY-MM-DD
+  time: string; // e.g. '4:00 PM'
+}) {
+  // Robustly parse date and time to a Date object
+  function parseDateTime(date: string, time: string): Date {
+    // Example: date = "2024-04-12", time = "4:00 PM"
+    const [hourMin, ampm] = time.trim().split(' ');
+    let [hour, minute] = hourMin.split(':').map(Number);
+    if (ampm && ampm.toLowerCase() === 'pm' && hour < 12) hour += 12;
+    if (ampm && ampm.toLowerCase() === 'am' && hour === 12) hour = 0;
+    const d = new Date(date);
+    d.setHours(hour, minute, 0, 0);
+    return d;
+  }
+
+  const start = parseDateTime(date, time);
+  const end = new Date(start.getTime() + 2 * 60 * 60 * 1000); // Default 2 hours
+
+  function format(d: Date) {
+    return (
+      d.getUTCFullYear().toString().padStart(4, '0') +
+      (d.getUTCMonth() + 1).toString().padStart(2, '0') +
+      d.getUTCDate().toString().padStart(2, '0') +
+      'T' +
+      d.getUTCHours().toString().padStart(2, '0') +
+      d.getUTCMinutes().toString().padStart(2, '0') +
+      d.getUTCSeconds().toString().padStart(2, '0') +
+      'Z'
+    );
+  }
+
+  const startStr = format(start);
+  const endStr = format(end);
+
+  // Google Calendar link
+  const googleUrl =
+    'https://www.google.com/calendar/render?action=TEMPLATE' +
+    `&text=${encodeURIComponent(title)}` +
+    `&dates=${startStr}/${endStr}` +
+    `&details=${encodeURIComponent(description)}` +
+    `&location=${encodeURIComponent(location)}`;
+
+  // ICS file content
+  const ics = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'BEGIN:VEVENT',
+    `SUMMARY:${title}`,
+    `DESCRIPTION:${description}`,
+    `LOCATION:${location}`,
+    `DTSTART:${startStr}`,
+    `DTEND:${endStr}`,
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\r\n');
+  const icsUrl = `data:text/calendar;charset=utf8,${encodeURIComponent(ics)}`;
+
+  return {
+    google: googleUrl,
+    ics: icsUrl
+  };
+}

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { Clock, Users, BookOpen, Music, Award, Lightbulb, Calendar, MapPin, Star } from 'lucide-svelte';
 	import { compositionResearchData } from '$lib/data';
-	
+	import MusicPlayer from "../../lib/components/ui/MusicPlayer.svelte";
+    import type { Track } from "../../lib/types";
 	// Icon mapping for dynamic rendering
 	const iconMap = {
 		Clock,
@@ -16,6 +17,14 @@
 	};
 	
 	$: ({ title, subtitle, introduction, aspects, educationalValue, methodology, impact } = compositionResearchData);
+	const myPlaylist: Track[] = [
+    {
+      title: "Preview",
+      artist: "Swetaranyam Sisters",
+      src: "/audio/Preview.wav",      // Corresponds to /static/audio/Preview.wav
+      cover: "/images/AKF_0021.jpg",  // Corresponds to /static/images/AKF_0021.jpg
+    }
+  ];
 </script>
 
 <svelte:head>
@@ -31,7 +40,7 @@
 				{@html subtitle}
 			</p>
 		</div>
-		
+		<MusicPlayer tracks={myPlaylist} />
 		<!-- Main Content Section -->
 		<div class="mb-16">
 			<h2 class="font-display text-3xl text-gold-200 mb-8 text-center">Work on Compositions</h2>

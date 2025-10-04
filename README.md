@@ -33,7 +33,6 @@ src/
 │   └── utils/               # Utility functions
 ├── routes/
 │   ├── performances/        # Performances page with pagination
-│   ├── events/              # Events page with pagination
 │   ├── media/               # Media and albums page with pagination
 │   ├── teaching/            # Teaching programs page
 │   ├── research/            # Research works page
@@ -108,7 +107,7 @@ Create a `.env` file in the root directory for local development:
 
 ```env
 PUBLIC_SITE_URL=https://your-domain.com
-PUBLIC_CONTACT_EMAIL=sriswetaranyam@gmail.com
+PUBLIC_CONTACT_EMAIL=swetaranyamsisters@gmail.com
 ```
 
 ## Content Management
