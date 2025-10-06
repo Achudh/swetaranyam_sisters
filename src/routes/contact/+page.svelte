@@ -1,113 +1,165 @@
 <script lang="ts">
-	// import { Clock, Users, BookOpen, Music, Award, Lightbulb, Calendar, MapPin, Star } from 'lucide-svelte';
-	// import { compositionResearchData } from '$lib/data';
+  import { fade, fly } from 'svelte/transition';
 
-	// // Icon mapping for dynamic rendering
-	// const iconMap = {
-	// 	Clock,
-	// 	Users,
-	// 	BookOpen,
-	// 	Music,
-	// 	Award,
-	// 	Lightbulb,
-	// 	Calendar,
-	// 	MapPin,
-	// 	Star
-	// };
+  let name = '';
+  let email = '';
+  let organization = '';
+  let phone = '';
+  let message = '';
+  let status: 'idle' | 'loading' | 'success' | 'error' = 'idle';
+  let feedback = '';
 
-	// $: ({ title, subtitle, introduction, aspects, educationalValue, methodology, impact } = compositionResearchData);
+  async function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    status = 'loading';
+    feedback = '';
+    try {
+      const res = await fetch('/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, organization, phone, message })
+      });
+
+      let result;
+      try {
+        result = await res.json();
+      } catch (e) {
+        throw new Error('Invalid server response');
+      }
+
+      if (result.success) {
+        status = 'success';
+        feedback = 'Message sent successfully!';
+        name = email = organization = phone = message = '';
+      } else {
+        throw new Error(result.error || 'Failed to send message');
+      }
+    } catch (err) {
+      status = 'error';
+      let errorMessage = 'Something went wrong. Please try again.';
+      if (err instanceof Error) {
+        errorMessage = err.message || errorMessage;
+      }
+      feedback = errorMessage;
+      console.error('Submit error:', err);
+    }
+  }
 </script>
 
+
 <svelte:head>
-	<title>Contact Us | Swetaranyam Sisters</title>
+	<title>Contact & Bookings | Swetaranyam Sisters</title>
 	<meta
 		name="description"
-		content="Explore the Swetaranyam Sisters' comprehensive research on Carnatic compositions, including chronological mapping, comparative interpretation, and theme-based curation."
+		content="Reach out to the Swetaranyam Sisters for concerts, workshops, and classes. Send a message to connect and collaborate on Carnatic musical journeys."
 	/>
 </svelte:head>
 
-<section id="contact" class="py-16" aria-labelledby="contact-heading">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div >
-			<div class="py-8">
-				<h2
-					id="contact-heading"
-					class="font-display text-3xl text-gold-200"
-				>
-					Contact & Bookings
-				</h2>
-				<p class="mt-3 text-amber-100/90">
-					For concerts, workshops and classes, send a message and
-					we'll get back shortly.
-				</p>
-			</div>
-			<form
-				class="rounded-2xl border border-maroon-700 bg-maroon-800/60 p-6 space-y-4"
-			>
-				<div class="grid sm:grid-cols-2 gap-4">
-					<div>
-						<label for="name" class="text-sm text-gold-200"
-							>Name</label
-						>
-						<input
-							id="name"
-							type="text"
-							class="mt-1 w-full rounded-lg bg-maroon-900/70 border border-maroon-700 px-3 py-2 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
-							placeholder="Your name"
-						/>
-					</div>
-					<div>
-						<label for="email" class="text-sm text-gold-200"
-							>Your Email</label
-						>
-						<input
-							id="email"
-							type="email"
-							class="mt-1 w-full rounded-lg bg-maroon-900/70 border border-maroon-700 px-3 py-2 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
-							placeholder="you@example.com"
-						/>
-					</div>
+<section id="contact" class="py-20 relative overflow-hidden">
+	<div class="absolute inset-0 bg-gradient-to-b from-maroon-950/90 via-maroon-900/80 to-maroon-950/90 pointer-events-none"></div>
+  {#if status === 'success' || status === 'error'}
+  <p
+    class={`text-center text-sm pt-2 font-medium ${
+      status === 'success'
+        ? 'text-green-400'
+        : 'text-red-400'
+    }`}
+    in:fly={{ y: -10, duration: 300 }}
+    out:fade={{ duration: 300 }}
+  >
+    {feedback}
+  </p>
+{/if}
+
+	<div class="relative max-w-5xl mx-auto px-6 lg:px-8">
+		<header class="text-center mb-12">
+			<h2 class="font-display text-4xl text-gold-300 tracking-wide">
+				Contact &amp; Bookings
+			</h2>
+			<p class="mt-3 text-amber-100/80 max-w-2xl mx-auto">
+				For concerts, workshops, or classes, share your details and we’ll get back to you shortly.
+			</p>
+		</header>
+
+		<form
+			on:submit|preventDefault={handleSubmit}
+			class="rounded-3xl border border-maroon-700 bg-maroon-800/70 p-8 shadow-xl shadow-maroon-950/30 backdrop-blur-sm space-y-6"
+		>
+			<div class="grid sm:grid-cols-2 gap-6">
+				<div>
+					<label for="name" class="text-sm font-medium text-gold-200">Name</label>
+					<input
+						id="name"
+						name="name"
+						bind:value={name}
+						required
+						class="mt-2 w-full rounded-xl bg-maroon-900/70 border border-maroon-700 px-4 py-3 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500/70"
+						placeholder="Your name"
+					/>
 				</div>
 				<div>
-					<label for="organization" class="text-sm text-gold-200"
-						>Organization</label
-					>
+					<label for="email" class="text-sm font-medium text-gold-200">Email</label>
+					<input
+						id="email"
+						name="email"
+						type="email"
+						bind:value={email}
+						required
+						class="mt-2 w-full rounded-xl bg-maroon-900/70 border border-maroon-700 px-4 py-3 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500/70"
+						placeholder="you@example.com"
+					/>
+				</div>
+			</div>
+
+			<div class="grid sm:grid-cols-2 gap-6">
+				<div>
+					<label for="organization" class="text-sm font-medium text-gold-200">Organization</label>
 					<input
 						id="organization"
-						type="organization"
-						class="mt-1 w-full rounded-lg bg-maroon-900/70 border border-maroon-700 px-3 py-2 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
-						placeholder="Your Organization"
+						name="organization"
+						bind:value={organization}
+						class="mt-2 w-full rounded-xl bg-maroon-900/70 border border-maroon-700 px-4 py-3 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500/70"
+						placeholder="Organization name"
 					/>
 				</div>
 				<div>
-					<label for="phone" class="text-sm text-gold-200"
-						>Your phone number</label
-					>
+					<label for="phone" class="text-sm font-medium text-gold-200">Phone Number</label>
 					<input
 						id="phone"
-						type="phone"
-						class="mt-1 w-full rounded-lg bg-maroon-900/70 border border-maroon-700 px-3 py-2 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
-						placeholder="10 Digit Phone Number"
+						name="phone"
+						bind:value={phone}
+						class="mt-2 w-full rounded-xl bg-maroon-900/70 border border-maroon-700 px-4 py-3 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500/70"
+						placeholder="10-digit number"
 					/>
 				</div>
-				<div>
-					<label for="message" class="text-sm text-gold-200"
-						>Message</label
-					>
-					<textarea
-						id="message"
-						rows="5"
-						class="mt-1 w-full rounded-lg bg-maroon-900/70 border border-maroon-700 px-3 py-2 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
-						placeholder="Tell us about your request..."
-					></textarea>
-				</div>
+			</div>
+
+			<div>
+				<label for="message" class="text-sm font-medium text-gold-200">Message</label>
+				<textarea
+					id="message"
+					name="message"
+					rows="5"
+					required
+					bind:value={message}
+					class="mt-2 w-full rounded-xl bg-maroon-900/70 border border-maroon-700 px-4 py-3 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500/70"
+					placeholder="Tell us about your request..."
+				></textarea>
+			</div>
+
+			<div class="pt-4">
 				<button
 					type="submit"
-					class="w-full rounded-full bg-gold-600 text-maroon-900 px-6 py-3 font-semibold hover:bg-gold-500 transition-colors"
+					class="w-full rounded-full bg-gradient-to-r from-gold-500 to-gold-400 text-maroon-950 px-6 py-3 font-semibold text-lg shadow-md hover:from-gold-400 hover:to-gold-300 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+					disabled={status === 'loading'}
 				>
-					Send Message
+					{#if status === 'loading'}
+						Sending...
+					{:else}
+						Send Message
+					{/if}
 				</button>
-			</form>
-		</div>
+			</div>
+		</form>
 	</div>
 </section>
