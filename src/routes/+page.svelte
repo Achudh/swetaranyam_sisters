@@ -1,37 +1,31 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
-	import { performances, albums, mediaItems, teachingPrograms, researchWorks, testimonials } from '$lib/data';
-	import { formatDate } from '$lib/utils';
-	import { ChevronLeft, ChevronRight } from 'lucide-svelte';
-	
-	// Get featured items
-	$: featuredAlbums = albums.slice(0, 2);
-	$: featuredTestimonials = testimonials.slice(0, 3);
-	
+	import { onMount } from "svelte";
+	import { fade, fly } from "svelte/transition";
+	import { ChevronLeft, ChevronRight } from "lucide-svelte";
+
 	const heroImages = [
-		'/images/AKF_0036.jpg',
-		'/images/AKF_0038.jpg',
-		'/images/AKF_0013.jpg',
-		'/images/AKF_0041.jpg',
-		'/images/AKF_0015.jpg',
+		"/images/AKF_0036.jpg",
+		"/images/AKF_0038.jpg",
+		"/images/AKF_0013.jpg",
+		"/images/AKF_0041.jpg",
+		"/images/AKF_0015.jpg",
 	];
-	
+
 	let current = 0;
 	let interval: any;
-	
+
 	function next() {
 		current = (current + 1) % heroImages.length;
 	}
 	function prev() {
 		current = (current - 1 + heroImages.length) % heroImages.length;
 	}
-	
+
 	onMount(() => {
 		interval = setInterval(next, 4000);
 		return () => clearInterval(interval);
 	});
-	
+
 	onMount(() => {
 		// Smooth scroll for anchor links
 		const handleAnchorClick = (e: Event) => {
@@ -40,19 +34,72 @@
 				e.preventDefault();
 				const element = document.querySelector(target.hash);
 				if (element) {
-					element.scrollIntoView({ behavior: 'smooth' });
+					element.scrollIntoView({ behavior: "smooth" });
 				}
 			}
 		};
-		
-		document.addEventListener('click', handleAnchorClick);
-		return () => document.removeEventListener('click', handleAnchorClick);
+
+		document.addEventListener("click", handleAnchorClick);
+		return () => document.removeEventListener("click", handleAnchorClick);
 	});
+
+	let name = "";
+	let email = "";
+	let organization = "";
+	let phone = "";
+	let message = "";
+	let status: "idle" | "loading" | "success" | "error" = "idle";
+	let feedback = "";
+
+	async function handleSubmit(event: SubmitEvent) {
+		event.preventDefault();
+		status = "loading";
+		feedback = "";
+		try {
+			const res = await fetch("/contact", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({
+					name,
+					email,
+					organization,
+					phone,
+					message,
+				}),
+			});
+
+			let result;
+			try {
+				result = await res.json();
+			} catch (e) {
+				throw new Error("Invalid server response");
+			}
+
+			if (result.success) {
+				status = "success";
+				feedback = "Message sent successfully!";
+				name = email = organization = phone = message = "";
+			} else {
+				throw new Error(result.error || "Failed to send message");
+			}
+		} catch (err) {
+			status = "error";
+			let errorMessage = "Something went wrong. Please try again.";
+			if (err instanceof Error) {
+				errorMessage = err.message || errorMessage;
+			}
+			feedback = errorMessage;
+			console.error("Submit error:", err);
+		}
+	}
 </script>
 
 <svelte:head>
 	<title>Swetaranyam Sisters | Carnatic Vocal Duo</title>
-	<meta name="description" content="Dr. R Nithya & Dr. R Vidya - acclaimed Carnatic vocalists with over 25 years of concerts, teaching, and research across India and internationally." />
+	<meta
+		name="description"
+		content="Dr. R Nithya & Dr. R Vidya - acclaimed Carnatic vocalists with over 25 years of concerts, teaching, and research across India and internationally."
+	/>
 </svelte:head>
 
 <!-- Hero Section -->
@@ -60,7 +107,7 @@
 	<!-- Background Carousel -->
 	<div class="absolute inset-0">
 		{#each heroImages as image, index}
-			<div 
+			<div
 				class="absolute inset-0 transition-opacity duration-1000 ease-in-out"
 				class:opacity-100={current === index}
 				class:opacity-0={current !== index}
@@ -68,8 +115,10 @@
 			></div>
 		{/each}
 	</div>
-	<div class="absolute inset-0 bg-gradient-to-b from-maroon-600/20 via-maroon-700/20 via-maroon-600/30 to-maroon-900"></div>
-	
+	<div
+		class="absolute inset-0 bg-gradient-to-b from-maroon-600/20 via-maroon-700/20 via-maroon-600/30 to-maroon-900"
+	></div>
+
 	<!-- Navigation Arrows for Hero -->
 	<button
 		on:click={prev}
@@ -87,21 +136,28 @@
 	</button>
 
 	<!-- Content -->
-	<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-		<div class="py-12 md:py-20 lg:py-56">
-		</div>
+	<div
+		class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28"
+	>
+		<div class="py-12 md:py-20 lg:py-56"></div>
 	</div>
 </section>
 <!-- Hero Section 2-->
 <section class="relative pt-12 md:pt-16 lg:pt-16">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+	<div
+		class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10 md:gap-16"
+	>
 		<!-- Text Left -->
 		<div class="flex-1 max-w-2xl">
-			<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight text-gold-200 mb-6">
+			<h1
+				class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight text-gold-200 mb-6"
+			>
 				Preserving Tradition, Creating Legacy
 			</h1>
 			<p class="text-lg text-amber-100/90 mb-8">
-				Dr. Dr. R Nithya & Dr. Dr. R Vidya - acclaimed Carnatic vocalists with over 25 years of concerts, teaching, and research across India and internationally.
+				Dr. Dr. R Nithya & Dr. Dr. R Vidya - acclaimed Carnatic
+				vocalists with over 25 years of concerts, teaching, and research
+				across India and internationally.
 			</p>
 			<div class="flex flex-wrap gap-3">
 				<a
@@ -131,7 +187,9 @@
 				href="/performances"
 				class="group rounded-2xl overflow-hidden border border-maroon-700 bg-maroon-800/60 hover:bg-maroon-800 transition-all duration-300 card-hover"
 			>
-				<div class="aspect-[16/9] bg-maroon-700/50 grid place-items-center">
+				<div
+					class="aspect-[16/9] bg-maroon-700/50 grid place-items-center"
+				>
 					<img
 						src="/images/AKF_0006-Enhanced-NR.jpg"
 						alt="Upcoming performances"
@@ -139,17 +197,23 @@
 					/>
 				</div>
 				<div class="p-5">
-					<h3 class="font-display text-xl text-gold-200">Upcoming performances</h3>
-					<p class="mt-2 text-sm text-amber-100/80">See dates and venues for the December season and tours.</p>
+					<h3 class="font-display text-xl text-gold-200">
+						Upcoming performances
+					</h3>
+					<p class="mt-2 text-sm text-amber-100/80">
+						See dates and venues for the December season and tours.
+					</p>
 				</div>
 			</a>
-			
+
 			<!-- Featured Albums -->
 			<a
 				href="/research"
 				class="group rounded-2xl overflow-hidden border border-maroon-700 bg-maroon-800/60 hover:bg-maroon-800 transition-all duration-300 card-hover"
 			>
-				<div class="aspect-[16/9] bg-maroon-700/50 grid place-items-center">
+				<div
+					class="aspect-[16/9] bg-maroon-700/50 grid place-items-center"
+				>
 					<img
 						src="/images/AKF_0041 copy.jpg"
 						alt="Research"
@@ -158,16 +222,21 @@
 				</div>
 				<div class="p-5">
 					<h3 class="font-display text-xl text-gold-200">Research</h3>
-					<p class="mt-2 text-sm text-amber-100/80">Explore the scholarly contributions of Dr. R Nithya & Dr. R Vidya</p>
+					<p class="mt-2 text-sm text-amber-100/80">
+						Explore the scholarly contributions of Dr. R Nithya &
+						Dr. R Vidya
+					</p>
 				</div>
 			</a>
-			
+
 			<!-- Gallery -->
 			<a
 				href="/gallery"
 				class="group rounded-2xl overflow-hidden border border-maroon-700 bg-maroon-800/60 hover:bg-maroon-800 transition-all duration-300 card-hover"
 			>
-				<div class="aspect-[16/9] bg-maroon-700/50 grid place-items-center">
+				<div
+					class="aspect-[16/9] bg-maroon-700/50 grid place-items-center"
+				>
 					<img
 						src="/images/AKF_0015 copy.jpg"
 						alt="Gallery"
@@ -176,7 +245,9 @@
 				</div>
 				<div class="p-5">
 					<h3 class="font-display text-xl text-gold-200">Gallery</h3>
-					<p class="mt-2 text-sm text-amber-100/80">Glimpses from concerts, events, and student showcases.</p>
+					<p class="mt-2 text-sm text-amber-100/80">
+						Glimpses from concerts, events, and student showcases.
+					</p>
 				</div>
 			</a>
 		</div>
@@ -185,11 +256,19 @@
 
 <!-- About Section -->
 <section id="about" class="bg-maroon-800/40 py-14">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+	<div
+		class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center"
+	>
 		<div in:fade={{ delay: 200 }}>
-			<h2 class="font-display text-3xl text-gold-200">About the Artists</h2>
+			<h2 class="font-display text-3xl text-gold-200">
+				About the Artists
+			</h2>
 			<p class="mt-4 text-amber-100/90">
-				Disciples hailing from a rich guru parampara of Carnatic music. The Swetaranyam Sisters have performed across premier sabhas in Chennai and beyond, presented lec-dems, accompanied dance productions, and are extensively training numerous students worldwide.
+				Disciples hailing from a rich guru parampara of Carnatic music.
+				The Swetaranyam Sisters have performed across premier sabhas in
+				Chennai and beyond, presented lec-dems, accompanied dance
+				productions, and are extensively training numerous students
+				worldwide.
 			</p>
 			<div class="mt-6 flex gap-3">
 				<a
@@ -238,25 +317,26 @@
 <!-- Featured Video Section -->
 <section class="bg-maroon-800/40 py-14" aria-labelledby="featured-video">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-	  <h2 id="featured-video" class="font-display text-3xl text-gold-200">
-		Featured Performance
-	  </h2>
-	  <div class="mt-6 rounded-2xl overflow-hidden border border-maroon-700 bg-maroon-800/50">
-		<div class="aspect-video">
-		  <iframe
-			class="w-full h-full"
-			src="https://www.youtube.com/embed/yCaKhNMtVoc"
-			title="Poorna Chandra Bimba | Ragamalika | Rupakam | Muthuswamy Dikshitar | Swetaranyam Sisters"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			referrerpolicy="strict-origin-when-cross-origin"
-			allowfullscreen
-		  ></iframe>
+		<h2 id="featured-video" class="font-display text-3xl text-gold-200">
+			Featured Performance
+		</h2>
+		<div
+			class="mt-6 rounded-2xl overflow-hidden border border-maroon-700 bg-maroon-800/50"
+		>
+			<div class="aspect-video">
+				<iframe
+					class="w-full h-full"
+					src="https://www.youtube.com/embed/yCaKhNMtVoc"
+					title="Poorna Chandra Bimba | Ragamalika | Rupakam | Muthuswamy Dikshitar | Swetaranyam Sisters"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+				></iframe>
+			</div>
 		</div>
-	  </div>
 	</div>
-  </section>
-  
+</section>
 
 <!-- Testimonials Section
 <section class="py-14 bg-maroon-800/40" aria-labelledby="testimonials">
@@ -277,7 +357,7 @@
 	</div>
 </section> -->
 
-<section id="contact" class="py-16" aria-labelledby="contact-heading">
+<!-- <section id="contact" class="py-16" aria-labelledby="contact-heading">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div >
 			<div class="py-8">
@@ -361,18 +441,139 @@
 			</form>
 		</div>
 	</div>
-</section>
+</section> -->
 
+<section id="contact" class="py-20 relative overflow-hidden">
+	<div
+		class="absolute inset-0 bg-gradient-to-b from-maroon-950/90 via-maroon-900/80 to-maroon-950/90 pointer-events-none"
+	></div>
+	{#if status === "success" || status === "error"}
+		<p
+			class={`text-center text-sm pt-2 font-medium ${
+				status === "success" ? "text-green-400" : "text-red-400"
+			}`}
+			in:fly={{ y: -10, duration: 300 }}
+			out:fade={{ duration: 300 }}
+		>
+			{feedback}
+		</p>
+	{/if}
+
+	<div class="relative max-w-5xl mx-auto px-6 lg:px-8">
+		<header class="text-center mb-12">
+			<h2 class="font-display text-4xl text-gold-300 tracking-wide">
+				Contact &amp; Bookings
+			</h2>
+			<p class="mt-3 text-amber-100/80 max-w-2xl mx-auto">
+				For concerts, workshops, or classes, share your details and
+				we’ll get back to you shortly.
+			</p>
+		</header>
+
+		<form
+			on:submit|preventDefault={handleSubmit}
+			class="rounded-3xl border border-maroon-700 bg-maroon-800/70 p-8 shadow-xl shadow-maroon-950/30 backdrop-blur-sm space-y-6"
+		>
+			<div class="grid sm:grid-cols-2 gap-6">
+				<div>
+					<label for="name" class="text-sm font-medium text-gold-200"
+						>Name</label
+					>
+					<input
+						id="name"
+						name="name"
+						bind:value={name}
+						required
+						class="mt-2 w-full rounded-xl bg-maroon-900/70 border border-maroon-700 px-4 py-3 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500/70"
+						placeholder="Your name"
+					/>
+				</div>
+				<div>
+					<label for="email" class="text-sm font-medium text-gold-200"
+						>Email</label
+					>
+					<input
+						id="email"
+						name="email"
+						type="email"
+						bind:value={email}
+						required
+						class="mt-2 w-full rounded-xl bg-maroon-900/70 border border-maroon-700 px-4 py-3 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500/70"
+						placeholder="you@example.com"
+					/>
+				</div>
+			</div>
+
+			<div class="grid sm:grid-cols-2 gap-6">
+				<div>
+					<label
+						for="organization"
+						class="text-sm font-medium text-gold-200"
+						>Organization</label
+					>
+					<input
+						id="organization"
+						name="organization"
+						bind:value={organization}
+						class="mt-2 w-full rounded-xl bg-maroon-900/70 border border-maroon-700 px-4 py-3 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500/70"
+						placeholder="Organization name"
+					/>
+				</div>
+				<div>
+					<label for="phone" class="text-sm font-medium text-gold-200"
+						>Phone Number</label
+					>
+					<input
+						id="phone"
+						name="phone"
+						bind:value={phone}
+						class="mt-2 w-full rounded-xl bg-maroon-900/70 border border-maroon-700 px-4 py-3 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500/70"
+						placeholder="10-digit number"
+					/>
+				</div>
+			</div>
+
+			<div>
+				<label for="message" class="text-sm font-medium text-gold-200"
+					>Message</label
+				>
+				<textarea
+					id="message"
+					name="message"
+					rows="5"
+					required
+					bind:value={message}
+					class="mt-2 w-full rounded-xl bg-maroon-900/70 border border-maroon-700 px-4 py-3 text-amber-50 placeholder:text-amber-50/40 focus:outline-none focus:ring-2 focus:ring-gold-500/70"
+					placeholder="Tell us about your request..."
+				></textarea>
+			</div>
+
+			<div class="pt-4">
+				<button
+					type="submit"
+					class="w-full rounded-full bg-gradient-to-r from-gold-500 to-gold-400 text-maroon-950 px-6 py-3 font-semibold text-lg shadow-md hover:from-gold-400 hover:to-gold-300 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+					disabled={status === "loading"}
+				>
+					{#if status === "loading"}
+						Sending...
+					{:else}
+						Send Message
+					{/if}
+				</button>
+			</div>
+		</form>
+	</div>
+</section>
 
 <style>
 	.transition-colors {
 		transition: all 0.2s ease-in-out;
 	}
-	
+
 	.transition-all {
 		transition: all 0.3s ease-in-out;
 	}
-	
+
 	.transition-opacity {
 		transition: opacity 0.3s ease-in-out;
 	}
