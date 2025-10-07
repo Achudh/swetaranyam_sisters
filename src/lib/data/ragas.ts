@@ -134,7 +134,7 @@ export const RagaResearchData: RagaResearchData = {
 // Related research work data
 export const RagaResearchWork: ResearchWork = {
 	id: 'Raga-research',
-	author: 'Dr. R Nithya',
+	author: 'Prof. Dr. R Nithya',
 	title: 'Development of rāga-s with special reference to Rāgalakṣaṇamu of Śāha Mahārāja',
 	type: 'thesis',
 	description: 'Doctoral research on the development of Ragas with chronological and analytical approach',

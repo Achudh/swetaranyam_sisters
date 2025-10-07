@@ -98,7 +98,7 @@
 	<title>Swetaranyam Sisters | Carnatic Vocal Duo</title>
 	<meta
 		name="description"
-		content="Dr. R Nithya & Dr. R Vidya - acclaimed Carnatic vocalists with over 25 years of concerts, teaching, and research across India and internationally."
+		content="Prof. Dr. R Nithya & Prof. Dr. R Vidya - acclaimed Carnatic vocalists with over 25 years of concerts, teaching, and research across India and internationally."
 	/>
 </svelte:head>
 
@@ -155,9 +155,9 @@
 				Preserving Tradition, Creating Legacy
 			</h1>
 			<p class="text-lg text-amber-100/90 mb-8">
-				Dr. Dr. R Nithya & Dr. Dr. R Vidya - acclaimed Carnatic
+				Prof. Dr. R Nithya & Prof. Dr. R Vidya - acclaimed Carnatic
 				vocalists with over 25 years of concerts, teaching, and research
-				across India and internationally.
+				in India and across the globe.
 			</p>
 			<div class="flex flex-wrap gap-3">
 				<a
@@ -223,8 +223,8 @@
 				<div class="p-5">
 					<h3 class="font-display text-xl text-gold-200">Research</h3>
 					<p class="mt-2 text-sm text-amber-100/80">
-						Explore the scholarly contributions of Dr. R Nithya &
-						Dr. R Vidya
+						Explore the scholarly contributions of Prof. Dr. R
+						Nithya & Prof. Dr. R Vidya
 					</p>
 				</div>
 			</a>
@@ -301,7 +301,7 @@
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<h2 id="research-heading" class="font-display text-3xl text-gold-200">Research Works</h2>
 		<div class="py-8">
-			Explore the scholarly contributions of Dr. R Nithya & Dr. R Vidya in the field of Carnatic music research and tradition preservation.
+			Explore the scholarly contributions of Prof. Dr. R Nithya & Prof. Dr. R Vidya in the field of Carnatic music research and tradition preservation.
 		</div>
 		<div class="">
 			<a
@@ -359,7 +359,7 @@
 
 <!-- <section id="contact" class="py-16" aria-labelledby="contact-heading">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div >
+		<div>
 			<div class="py-8">
 				<h2
 					id="contact-heading"
@@ -466,7 +466,7 @@
 			</h2>
 			<p class="mt-3 text-amber-100/80 max-w-2xl mx-auto">
 				For concerts, workshops, or classes, share your details and
-				we’ll get back to you shortly.
+				we'll get back to you shortly.
 			</p>
 		</header>
 
