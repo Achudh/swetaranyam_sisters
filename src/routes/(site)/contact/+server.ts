@@ -1,6 +1,6 @@
 // src/routes/contact/+server.ts
 import { json } from '@sveltejs/kit';
-import { db } from '../../lib/server/firebase';
+import { db } from '../../../lib/server/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export const POST = async ({ request }: { request: Request }) => {
