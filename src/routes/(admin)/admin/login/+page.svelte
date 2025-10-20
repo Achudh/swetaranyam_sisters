@@ -90,13 +90,4 @@
       {isLoading ? "Signing In..." : "Sign In"}
     </button>
   </form>
-
-  <div class="auth-links mt-6 text-white-600 text-center text-sm">
-    <p>
-      Don't have an account?
-      <a href="/signup" class="text-gold-400 hover:underline font-medium"
-        >Sign Up</a
-      >
-    </p>
-  </div>
 </div>
