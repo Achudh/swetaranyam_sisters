@@ -135,7 +135,7 @@ export const teachingPrograms: TeachingProgram[] = [
 export const researchWorks: ResearchWork[] = [
 	{
 		id: '1',
-		author: 'Dr. R Nithya',
+		author: 'Prof. Dr. R Nithya',
 		title: 'Development of rāga-s with special reference to Rāgalakṣaṇamu of Śāha Mahārāja',
 		type: 'thesis',
 		description: 'Doctoral research on the development of Ragas',
@@ -146,7 +146,7 @@ export const researchWorks: ResearchWork[] = [
 	},
 	{
 		id: '2',
-		author: 'Dr. R Vidya',
+		author: 'Prof. Dr. R Vidya',
 		title: 'Lesser known composers in Saṅgīta Sampradāya Pradarśini - A Study',
 		type: 'thesis',
 		description: 'Research on lesser known composers in Carnatic music tradition',
