@@ -20,11 +20,11 @@
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center mb-12">
 			<h1 class="font-display text-4xl sm:text-5xl text-gold-200 mb-4">
-				Performances
+				Top Performances
 			</h1>
 			<p class="text-lg text-amber-100/90 max-w-3xl mx-auto">
 				Experience the soulful renditions of traditional Carnatic music
-				by Prof. Dr. R Nithya & Prof. Dr. R Vidya at premier venues across India and
+				by Dr. R Nithya & Dr. R Vidya at premier venues across India and
 				internationally.
 			</p>
 		</div>

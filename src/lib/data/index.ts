@@ -15,7 +15,7 @@ export const performances: Performance[] = [
 		description: 'Special thematic concert',
 		locationUrl: 'https://maps.app.goo.gl/oaeK7P6TxJFtNroz6',
 		type: 'concert',
-		status: 'upcoming',
+		status: 'past',
 		image: '/images/ragasudha.PNG',
 		accompaniment: ['Violin by R.Raghul', 'Mridangam by B.Sivaraman', 'Kanjira by Sunil Kumar'],
 		tags: ['festival', 'international', 'lec-dem']
