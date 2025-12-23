@@ -6,7 +6,7 @@
 
 <svelte:head>
 	<title>Research Works | Swetaranyam Sisters</title>
-	<meta name="description" content="Explore the research contributions of Prof. Dr. R Nithya & Prof. Dr. R Vidya in Carnatic music, including doctoral theses and scholarly work." />
+	<meta name="description" content="Explore the research contributions of Dr. R Nithya & Dr. R Vidya in Carnatic music, including doctoral theses and scholarly work." />
 </svelte:head>
 
 <div class="py-14">
@@ -14,7 +14,7 @@
 		<div class="text-center mb-12">
 			<h1 class="font-display text-4xl sm:text-5xl text-gold-200 mb-4">Research Works</h1>
 			<p class="text-lg text-amber-100/90 max-w-3xl mx-auto">
-				Explore the scholarly contributions of Prof. Dr. R Nithya & Prof. Dr. R Vidya in the field of Carnatic music research and tradition preservation.
+				Explore the scholarly contributions of Dr. R Nithya & Dr. R Vidya in the field of Carnatic music research and tradition preservation.
 			</p>
 		</div>
 		

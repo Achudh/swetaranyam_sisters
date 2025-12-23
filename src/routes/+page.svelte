@@ -98,7 +98,7 @@
 	<title>Swetaranyam Sisters | Carnatic Vocal Duo</title>
 	<meta
 		name="description"
-		content="Prof. Dr. R Nithya & Prof. Dr. R Vidya - acclaimed Carnatic vocalists with over 25 years of concerts, teaching, and research across India and internationally."
+		content=" Dr. R Nithya & Dr. R Vidya - acclaimed Carnatic vocalists with over 25 years of concerts, teaching, and research across India and internationally."
 	/>
 </svelte:head>
 
@@ -155,7 +155,7 @@
 				Preserving Tradition, Creating Legacy
 			</h1>
 			<p class="text-lg text-amber-100/90 mb-8">
-				Prof. Dr. R Nithya & Prof. Dr. R Vidya - acclaimed Carnatic
+				Dr. R Nithya & Dr. R Vidya - acclaimed Carnatic
 				vocalists with over 25 years of concerts, teaching, and research
 				in India and across the globe.
 			</p>
@@ -165,6 +165,13 @@
 					class="inline-flex items-center gap-2 rounded-full bg-gold-600 text-maroon-900 px-6 py-3 font-semibold hover:bg-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-300 transition-colors"
 				>
 					Book with us
+				</a>
+				<a
+					href="https://patreon.com/SwetaranyamSisters?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink"
+					target="_blank"
+					class="inline-flex items-center gap-2 rounded-full bg-gold-600 text-maroon-900 px-6 py-3 font-semibold hover:bg-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-300 transition-colors"
+				>
+					Listen on Pateron
 				</a>
 				<a
 					href="/teaching"
@@ -223,8 +230,8 @@
 				<div class="p-5">
 					<h3 class="font-display text-xl text-gold-200">Research</h3>
 					<p class="mt-2 text-sm text-amber-100/80">
-						Explore the scholarly contributions of Prof. Dr. R
-						Nithya & Prof. Dr. R Vidya
+						Explore the scholarly contributions of Dr. R
+						Nithya & Dr. R Vidya
 					</p>
 				</div>
 			</a>
