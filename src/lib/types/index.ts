@@ -80,7 +80,7 @@ export interface TeachingProgram {
 
 export interface ResearchWork {
 	id: string;
-	author: 'Prof. Dr. R Nithya' | 'Prof. Dr. R Vidya' | 'both';
+	author: 'Dr. R Nithya' | 'Dr. R Vidya' | 'both';
 	title: string;
 	type: 'thesis' | 'paper' | 'presentation' | 'book';
 	description: string;

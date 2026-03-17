@@ -308,7 +308,7 @@
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<h2 id="research-heading" class="font-display text-3xl text-gold-200">Research Works</h2>
 		<div class="py-8">
-			Explore the scholarly contributions of Prof. Dr. R Nithya & Prof. Dr. R Vidya in the field of Carnatic music research and tradition preservation.
+			Explore the scholarly contributions of Dr. R Nithya & Dr. R Vidya in the field of Carnatic music research and tradition preservation.
 		</div>
 		<div class="">
 			<a
