@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { researchWorks } from '$lib/data';
-	import { FileText, Calendar, ExternalLink, User } from 'lucide-svelte';
-	import { formatDate } from '$lib/utils';
+	import { FileText, Calendar, User } from 'lucide-svelte';
 </script>
 
 <svelte:head>

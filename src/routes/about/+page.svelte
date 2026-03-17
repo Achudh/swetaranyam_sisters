@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { fade } from "svelte/transition";
-	import { onMount } from "svelte";
 </script>
 
 <svelte:head>
 	<title>About | Swetaranyam Sisters</title>
 	<meta
 		name="description"
-		content="Learn about the musical journey, training, and achievements of Prof. Prof. Dr. R Nithya & Prof. Prof. Dr. R Vidya - acclaimed Carnatic vocalists."
+		content="Learn about the musical journey, training, and achievements of Dr. R Nithya & Dr. R Vidya - acclaimed Carnatic vocalists."
 	/>
 </svelte:head>
 
