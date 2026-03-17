@@ -40,7 +40,7 @@
 				class="text-xl text-amber-100/90 max-w-3xl mx-auto"
 				in:fade={{ delay: 400 }}
 			>
-				Prof. Prof. Dr. R Nithya & Prof. Prof. Dr. R Vidya - A journey through tradition,
+				Dr. R Nithya & Dr. R Vidya - A journey through tradition,
 				excellence, and dedication to Carnatic music
 			</p>
 		</div>
@@ -83,7 +83,7 @@
 							traditions. Since 2007, the artists have been
 							undergoing advanced training under the renowned
 							violinist
-							<strong>Isai Peroli Sri R.K. Shriramkumar</strong>.
+							<strong> Sangita Kalanidhi Sri R.K. Shriramkumar</strong>.
 						</p>
 					</div>
 					<br />
@@ -277,7 +277,7 @@
 					Rāga Research
 				</h3>
 				<p class="text-amber-100/85 mb-4">
-					Prof. Dr. R Nithya's doctoral research on "Development of rāga-s
+					Dr. R Nithya's doctoral research on "Development of rāga-s
 					with special reference to Rāgalakṣaṇamu of Śāha Mahārāja"
 				</p>
 				<span class="text-gold-400 group-hover:text-gold-300"
@@ -295,7 +295,7 @@
 					Composer Research
 				</h3>
 				<p class="text-amber-100/85 mb-4">
-					Prof. Dr. R Vidya's study on "Lesser known composers in Saṅgīta
+					Dr. R Vidya's study on "Lesser known composers in Saṅgīta
 					Sampradāya Pradarśini"
 				</p>
 				<span class="text-gold-400 group-hover:text-gold-300"
